@@ -8,8 +8,8 @@ import org.junit.Test;
  * Solution: (O(n) time complexity and O(1) space complexity)
  * The first missing positive integer will be always in the range from 1 to (array.length + 1) (L)
  * - If the array is empty, return 1
- * - Ignore negative values (<=0) or too high index values (>= L+1)
- * - Loop over the array with above conditions to arrange the array to get a sequence of positive integers 1,2,3,4,5...
+ * - Ignore negative values or too high index values (> array.length)
+ * - Loop over the array with above conditions and arrange the array to get a sequence of positive integers 1,2,3,4,5...
  *   by swapping elements into the correct positions.
  * - Next loop, it would find the first value not in the correct position and then return i+1 that is the smallest
  *   positive integer
@@ -30,7 +30,7 @@ public class Main {
         // iterate through the whole array mapping elements [1,n] to positions [0, n-1]
         for(int i = 0; i < length; i++ ){
             // while elements are not on their correct positions keep putting them there
-            while(arr[i] > 0 && arr[i] < length && arr[i] != i+1 && arr[i] != arr[arr[i] -1]){
+            while(arr[i] > 0 && arr[i] <= length && arr[i] != i+1 && arr[i] != arr[arr[i] -1]){
                 // Use swapping to keep constant space
                 int tmp = arr[arr[i] - 1];
                 arr[arr[i] - 1] = arr[i];
