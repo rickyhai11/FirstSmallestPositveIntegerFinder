@@ -9,7 +9,7 @@ Write an efficient algorithm for the following assumptions:
 - N is an integer within the range [1..100,000]
 - Each element of array A is an integer within the range [−1,000,000..1,000,000]
 # Solution
-Big-O analysis: O(n) time complexity and O(1) space complexity)
+Big-O analysis: O(n) time complexity and O(1) space complexity.
   - The first smallest missing positive integer will be always in the range from 1 to (array.length + 1)
   - If the array is empty, return 1
   - Ignore negative values or too high index values (> array.length)
